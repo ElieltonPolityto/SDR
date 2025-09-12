@@ -73,12 +73,6 @@ if not ARQUIVOS_EXISTENTES:
     st.error("Nenhum arquivo de dados encontrado. Verifique os caminhos dos arquivos.")
     st.stop()
 
-POTENCIAS = {
-    "Cam Congelados Eco2Pack L1": 10.0,
-    "Cam Congelados Eco2Pack L2": 10.0,
-    "Cam Congelados Eco2Pack L3": 10.0,
-}
-
 CYCLES_DAY  = 4
 CYCLE_HOURS = 45 / 60
 SETPOINT    = -20.0
