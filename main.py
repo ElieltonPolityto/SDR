@@ -3,8 +3,11 @@ import pandas as pd
 import altair as alt
 from datetime import timedelta
 import os
+from lojas import lojas_selecionadas
 
-
+# Incializa o dashboard com os dicionários em nulo, aguardando serem selecionados pelo usuário
+ARQUIVOS = {None: None}
+POTENCIAS = {None: None}
 
 # ─── Paleta Plotter Racks ────────────────────────────────────────────────────
 COLOR_PREV = "#112D4E"
@@ -15,10 +18,11 @@ COLOR_BG   = "#E8E8E8"
 # Titulo da caixa de seleção da instalação
 st.sidebar.header("Seleção da instalação", help='Selecione a instalação que deseja analisar')
 
-
 # Opções disponiveis: 'Eficinência Energética' + lista com as chaves do dicionário de arquivos existentes
 options = ["Atacadão Palmas TO","Atacadão Bangu RJ"]
 selecionado = st.sidebar.selectbox("Selecione a instalação:", options, index=0)
+
+ARQUIVOS, POTENCIAS = lojas_selecionadas(str(selecionado))
 
 # ─── Configuração da Página ──────────────────────────────────────────────────
 st.set_page_config(
@@ -29,37 +33,6 @@ st.set_page_config(
 
 # Titulo da página!
 st.header(f"Plotter Racks - Análise SDR -{selecionado} :snowflake: :heavy_dollar_sign:")
-
-
-ARQUIVOS = {None: None}
-POTENCIAS = {None: None}
-
-# Altera a base de dados conforme seleção do 
-match selecionado:
-    case "Atacadão Bangu RJ": # Primeira posição da lista - Atacadão Bangu RJ
-        ARQUIVOS = {
-                "Cam Congelados Eco2Pack L1": r"data/atacadao_bangu_RJ/L1A01_cam_congelados.csv",
-                "Cam Congelados Eco2Pack L2": r"data/atacadao_bangu_RJ/L2A01_cam_congelados.csv",
-                    } # Recebe os arquivos 
-        POTENCIAS = {
-            "Cam Congelados Eco2Pack L1": 10.0,
-            "Cam Congelados Eco2Pack L2": 10.0,
-        }
-    case "Atacadão Palmas TO":
-        ARQUIVOS = {
-                "Cam Congelados Eco2Pack L1": r"data/atacadao_palmas_TO/L1.csv",
-                "Cam Congelados Eco2Pack L2": r"data/atacadao_palmas_TO/L2.csv",
-                "Cam Congelados Eco2Pack L3": r"data/atacadao_palmas_TO/L3.csv",
-                    } # Recebe os arquivos 
-        POTENCIAS = {
-            "Cam Congelados Eco2Pack L1": 10.0,
-            "Cam Congelados Eco2Pack L2": 10.0,
-            "Cam Congelados Eco2Pack L3": 10.0,
-        }           
-    case _:
-        ARQUIVOS = {}  
-        POTENCIAS = {}              
-
 
 # Verificar quais arquivos existem
 ARQUIVOS_EXISTENTES = {}
@@ -117,7 +90,6 @@ def load_all(paths):
 # ─── Verificar se os arquivos existem ────────────────────────────────────────
 # chama a função load_all com base no dicionário 'ARQUIVOS_EXISTENTES'
 df_all = load_all(ARQUIVOS_EXISTENTES)
-
 
 # Checa se o dicionário foi corretamente carregado
 if df_all.empty:
