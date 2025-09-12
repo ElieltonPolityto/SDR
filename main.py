@@ -31,7 +31,8 @@ st.set_page_config(
 st.header(f"Plotter Racks - Análise SDR -{selecionado} :snowflake: :heavy_dollar_sign:")
 
 
-ARQUIVOS = {}, POTENCIAS = {}
+ARQUIVOS = {None: None}
+POTENCIAS = {None: None}
 
 # Altera a base de dados conforme seleção do 
 match selecionado:
