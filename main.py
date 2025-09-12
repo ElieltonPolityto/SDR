@@ -30,6 +30,9 @@ st.set_page_config(
 # Titulo da página!
 st.header(f"Plotter Racks - Análise SDR -{selecionado} :snowflake: :heavy_dollar_sign:")
 
+
+ARQUIVOS = {}, POTENCIAS = {}
+
 # Altera a base de dados conforme seleção do 
 match selecionado:
     case "Atacadão Bangu RJ": # Primeira posição da lista - Atacadão Bangu RJ
@@ -37,17 +40,24 @@ match selecionado:
                 "Cam Congelados Eco2Pack L1": r"data/atacadao_bangu_RJ/L1A01_cam_congelados.csv",
                 "Cam Congelados Eco2Pack L2": r"data/atacadao_bangu_RJ/L2A01_cam_congelados.csv",
                     } # Recebe os arquivos 
-        #POTENCIAS = {}
+        POTENCIAS = {
+            "Cam Congelados Eco2Pack L1": 10.0,
+            "Cam Congelados Eco2Pack L2": 10.0,
+        }
     case "Atacadão Palmas TO":
         ARQUIVOS = {
                 "Cam Congelados Eco2Pack L1": r"data/atacadao_palmas_TO/L1.csv",
                 "Cam Congelados Eco2Pack L2": r"data/atacadao_palmas_TO/L2.csv",
                 "Cam Congelados Eco2Pack L3": r"data/atacadao_palmas_TO/L3.csv",
                     } # Recebe os arquivos 
-        #POTENCIAS = {}            
+        POTENCIAS = {
+            "Cam Congelados Eco2Pack L1": 10.0,
+            "Cam Congelados Eco2Pack L2": 10.0,
+            "Cam Congelados Eco2Pack L3": 10.0,
+        }           
     case _:
         ARQUIVOS = {}  
-        #POTENCIAS = {}              
+        POTENCIAS = {}              
 
 
 # Verificar quais arquivos existem
