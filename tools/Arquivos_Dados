@@ -1,0 +1,14 @@
+Notebook da Racks
+ARQUIVOS = {
+    "Câmara de Congelados": r"C:\Users\elielton.polityto\Desktop\Relatorio_Muffato\AIDA\Relatorio_Muffato\CamaraCongelados\Dados Ambiente\18-06 a 02-07\Dados_CamCongelados.xlsx",
+    "Step-in Master": r"C:\Users\elielton.polityto\Desktop\Relatorio_Muffato\AIDA\Relatorio_Muffato\StepinMaster\Dados Ambiente\18-06 a 02-07\Dados_StepinMaster.xlsm",
+    "Step-in Slave": r"C:\Users\elielton.polityto\Desktop\Relatorio_Muffato\AIDA\Relatorio_Muffato\StepinSlave\Dados Ambiente\18-06 a 02-07\Dados_StepinSlave.xlsm",
+}
+
+Notebook pessoal (Elielton)
+
+ARQUIVOS = {
+    "Câmara de Congelados": r"C:\Users\eliel\Desktop\Elielton\AIDA\Relatorio_Muffato\CamaraCongelados\Dados Ambiente\18-06 a 02-07\Dados_CamCongelados.xlsx",
+    "Step-in Master":       r"C:\Users\eliel\Desktop\Elielton\AIDA\Relatorio_Muffato\StepinMaster\Dados Ambiente\18-06 a 02-07\Dados_StepinMaster.xlsm",
+    "Step-in Slave":        r"C:\Users\eliel\Desktop\Elielton\AIDA\Relatorio_Muffato\StepinSlave\Dados Ambiente\18-06 a 02-07\Dados_StepinSlave.xlsm",
+}
