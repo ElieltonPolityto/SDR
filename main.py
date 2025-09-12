@@ -17,7 +17,7 @@ st.sidebar.header("Seleção da instalação", help='Selecione a instalação qu
 
 
 # Opções disponiveis: 'Eficinência Energética' + lista com as chaves do dicionário de arquivos existentes
-options = ["Atacadão Bangu RJ", "Atacadão Palmas TO"]
+options = ["Atacadão Palmas TO","Atacadão Bangu RJ"]
 selecionado = st.sidebar.selectbox("Selecione a instalação:", options, index=0)
 
 # ─── Configuração da Página ──────────────────────────────────────────────────
@@ -37,14 +37,17 @@ match selecionado:
                 "Cam Congelados Eco2Pack L1": r"data/atacadao_bangu_RJ/L1A01_cam_congelados.csv",
                 "Cam Congelados Eco2Pack L2": r"data/atacadao_bangu_RJ/L2A01_cam_congelados.csv",
                     } # Recebe os arquivos 
+        #POTENCIAS = {}
     case "Atacadão Palmas TO":
         ARQUIVOS = {
                 "Cam Congelados Eco2Pack L1": r"data/atacadao_palmas_TO/L1.csv",
                 "Cam Congelados Eco2Pack L2": r"data/atacadao_palmas_TO/L2.csv",
                 "Cam Congelados Eco2Pack L3": r"data/atacadao_palmas_TO/L3.csv",
                     } # Recebe os arquivos 
+        #POTENCIAS = {}            
     case _:
-        ARQUIVOS = {}                
+        ARQUIVOS = {}  
+        #POTENCIAS = {}              
 
 
 # Verificar quais arquivos existem
