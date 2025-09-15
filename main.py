@@ -55,7 +55,6 @@ def load_all(paths):
     dfs = []
     for nome, caminho in paths.items():
         try:
-            #df = pd.read_excel(caminho, engine="openpyxl")
             df = pd.read_csv(caminho, sep=";", encoding="utf-8", na_values='---')
             # Verificar se o DataFrame não está vazio
             if df.empty:

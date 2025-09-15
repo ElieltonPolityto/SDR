@@ -4,12 +4,12 @@ def lojas_selecionadas(loja:str): # Função para seleção dos arquivos das loj
     match loja:
         case "Atacadão Bangu RJ":
             ARQUIVOS = {
-                "Cam Congelados Eco2Pack L1": r"data/atacadao_bangu_RJ/L1.csv",
-                "Cam Congelados Eco2Pack L2": r"data/atacadao_bangu_RJ/L2.csv",
+                "Cam Cong L1": r"data/atacadao_bangu_RJ/L1.csv",
+                "Cam Cong L2": r"data/atacadao_bangu_RJ/L2.csv",
                     }
             POTENCIAS = {
-            "Cam Cong L1": 10.0,
-            "Cam Cong L2": 10.0,
+                "Cam Cong L1": 10.0,
+                "Cam Cong L2": 10.0,
                     }
         case "Atacadão Palmas TO":
             ARQUIVOS = {
