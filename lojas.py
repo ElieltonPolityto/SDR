@@ -8,8 +8,8 @@ def lojas_selecionadas(loja:str): # Função para seleção dos arquivos das loj
                 "Cam Cong L2": r"data/atacadao_bangu_RJ/L2.csv",
                     }
             POTENCIAS = {
-                "Cam Cong L1": 10.0,
-                "Cam Cong L2": 10.0,
+                "Cam Cong L1": 16.05,
+                "Cam Cong L2": 16.05,
                     }
         case "Atacadão Palmas TO":
             ARQUIVOS = {
@@ -18,9 +18,9 @@ def lojas_selecionadas(loja:str): # Função para seleção dos arquivos das loj
                 "Cam Cong L3": r"data/atacadao_palmas_TO/L3.csv",
                     }
             POTENCIAS = {
-                "Cam Cong L1": 10.0,
-                "Cam Cong L2": 10.0,
-                "Cam Cong L3": 10.0,
+                "Cam Cong L1": 16.05,
+                "Cam Cong L2": 16.05,
+                "Cam Cong L3": 16.05,
                     }   
         case _:
             ARQUIVOS = {None:None}
